@@ -1,9 +1,8 @@
-import React, {Component, PropTypes} from 'react';
 import {Result, validateRules} from './util';
+import React from 'react';
 import TextField from 'material-ui/TextField';
 
-
-export default class CTextField extends Component {
+export default class CTextField extends React.Component {
     constructor (props) {
 
         super(props);
@@ -33,9 +32,10 @@ export default class CTextField extends Component {
         }
         /* eslint no-trailing-spaces: "warn"*/
         this.props.onChange(
-            event.target.name, 
+            this.props.name, 
             event.target.value, 
-            this._validResult
+            this._validResult,
+            event
             );
 
     }
@@ -59,8 +59,9 @@ export default class CTextField extends Component {
 }
 /* eslint react/require-default-props: "warn"*/
 CTextField.propTypes = {
-    'errorText': PropTypes.string,
-    'onChange': PropTypes.func.isRequired,
-    'replaceValid': PropTypes.func,
-    'rules': PropTypes.string
+    'errorText': React.PropTypes.string,
+    'name': React.PropTypes.string,
+    'onChange': React.PropTypes.func.isRequired,
+    'replaceValid': React.PropTypes.func,
+    'rules': React.PropTypes.string
 };

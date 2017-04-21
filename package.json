@@ -2,7 +2,7 @@
   "name": "reactmuicustomized",
   "version": "0.0.1",
   "description": "React MUI library customized to support validation and React DnD",
-  "main": "index.js",
+  "main": "lib/reactmuicustomized",
   "scripts": {
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
